@@ -14,7 +14,7 @@ class DeepWikiPlugin(Star):
     def __init__(self, context: Context, config: AstrBotConfig):
         super().__init__(context)
         self.config = config
-        self.default_repo_name = "AstrBotDevs/AstrBot"
+        self.default_repo_name = self.config.get("default_repo_name", "AstrBotDevs/AstrBot")
         self.client = DeepWikiClient()
 
     @filter.command("deepwiki", alias={"dw"})
